@@ -29,8 +29,10 @@ function displayValue(){
     let lastName=lastNameInput.value;
     let lastNameArray=lastName.split('');
     let password=passwordInput.value;
+    let passwordArray=password.split('');
     let email=emailInput.value;
     let emailRegx=/^[^@\s]+@[^\s@]+\.[^\s@]+$/;
+    passwordRegex=/^[]/
     if(firstNameArray.length==0){
         errorMessage.innerHTML='first name is required';
     }
@@ -51,6 +53,9 @@ function displayValue(){
     }
     else if(emailRegx.test(email)==false){
         errorMessage.innerHTML='invalid email';
+    }
+    else if(passwordArray.length<5){
+        errorMessage.innerHTML='password must be greater than 5 character'
     }
     else{
         errorMessage.innerHTML='';
